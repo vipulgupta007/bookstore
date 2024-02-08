@@ -1,0 +1,9 @@
+/Users/vip1/Documents/workspace/bookstore/src/main/java/com/bookstore/BookStoreApplication.java
+/Users/vip1/Documents/workspace/bookstore/src/main/java/com/bookstore/domain/BookStoreDto.java
+/Users/vip1/Documents/workspace/bookstore/src/main/java/com/bookstore/domain/BookStoreRto.java
+/Users/vip1/Documents/workspace/bookstore/src/main/java/com/bookstore/controller/BookStoreController.java
+/Users/vip1/Documents/workspace/bookstore/src/main/java/com/bookstore/service/BookStoreService.java
+/Users/vip1/Documents/workspace/bookstore/src/main/java/com/bookstore/service/BookStoreServiceImpl.java
+/Users/vip1/Documents/workspace/bookstore/src/main/java/com/bookstore/config/SerializerConfig.java
+/Users/vip1/Documents/workspace/bookstore/src/main/java/com/bookstore/model/BookStore.java
+/Users/vip1/Documents/workspace/bookstore/src/main/java/com/bookstore/repository/BookStoreRepository.java

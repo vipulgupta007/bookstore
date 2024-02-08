@@ -1,0 +1,11 @@
+com/bookstore/model/BookStore.class
+com/bookstore/repository/BookStoreRepository.class
+com/bookstore/controller/BookStoreController.class
+com/bookstore/BookStoreApplication.class
+com/bookstore/service/BookStoreService.class
+com/bookstore/service/BookStoreServiceImpl.class
+com/bookstore/model/BookStore$BookStoreBuilder.class
+com/bookstore/domain/BookStoreDto.class
+com/bookstore/domain/BookStoreRto$BookStoreRtoBuilder.class
+com/bookstore/domain/BookStoreRto.class
+com/bookstore/config/SerializerConfig.class

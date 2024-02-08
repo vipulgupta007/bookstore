@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: book-store
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: always
+    url: jdbc:postgresql://custompostgres:5432/StockServices
+    username: StockServices
+    password: StockServices
+    platform: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    # database-platform: org.hibernate.dialect.Oracle10gDialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+
+server:
+  port: 8080
+
