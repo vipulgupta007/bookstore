@@ -1,5 +1,5 @@
 def AGENT_LABEL = null
-node('Built-In Node') {
+node('built-in') {
     stage('Set Agent Label') {
         AGENT_LABEL = "jenkins_agent"
     }
