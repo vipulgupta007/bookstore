@@ -31,8 +31,5 @@ def checkoutAndBuild() {
                                   ]]
     ])
 
-    echo "Stage: POM_VERSION"
-    def pom = readMavenPom()
-    env.VERSION = pom.version[0..4]
-    echo "Project version from POM : $version"
+    echo "Build successfull"
 }
