@@ -5,7 +5,6 @@ node('built-in') {
     }
 }
 
-@Library("shared_lib@main") _
 
 pipeline {
     agent {
