@@ -29,14 +29,15 @@ pipeline {
     }
     
     stages {
-        stage('Initialise') {
+        stage('Checkout & Build') {
             steps {
                 script {
                     checkoutAndBuild()
                 }
             }
         }
-    }
+
+        
 }
 
 def checkoutAndBuild() {
@@ -48,5 +49,6 @@ def checkoutAndBuild() {
                                    url          : 'git@github.com:vipulgupta007/bookstore.git'
                                   ]]
     ])
+    sh "mvn clean package"
     echo "Build successfull with option $env.Data"
 }
