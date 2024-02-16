@@ -6,9 +6,10 @@ node('built-in') {
 }
 
 @Library("shared_lib@main") _
+
 properties([
         parameters([
-                [$class: 'StringParameterValue', name: 'Data', description: 'This will print some data',
+                [$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT', name: 'Data', description: 'This will print some data', filterLength: 1, filterable: false,
                  script: [
                          $class        : 'GroovyScript',
                          fallbackScript: [classpath: [], sandbox: true, script: "return['Error']"],
