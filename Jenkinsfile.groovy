@@ -44,6 +44,5 @@ def checkoutAndBuild() {
                                    url          : 'git@github.com:vipulgupta007/bookstore.git'
                                   ]]
     ])
-    echo ${Data}
     echo "Build successfull"
 }
