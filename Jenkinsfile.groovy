@@ -48,5 +48,5 @@ def checkoutAndBuild() {
                                    url          : 'git@github.com:vipulgupta007/bookstore.git'
                                   ]]
     ])
-    echo "Build successfull"
+    echo "Build successfull with option $env.Data"
 }
