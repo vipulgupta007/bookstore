@@ -26,7 +26,7 @@ def checkoutAndBuild() {
     checkout([$class           : 'GitSCM',
               branches         : [[name: "origin/main"]],
               extensions       : [],
-              userRemoteConfigs: [[credentialsId: 'jenkins',
+              userRemoteConfigs: [[credentialsId: 'JENKINS_SSH',
                                    url          : 'git@github.com:vipulgupta007/bookstore.git'
                                   ]]
     ])
