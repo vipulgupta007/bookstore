@@ -6,6 +6,17 @@ node('built-in') {
 }
 
 @Library("shared_lib@main") _
+properties([
+        parameters([
+                [$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT', name: 'Data', description: 'This will print some data', filterLength: 1, filterable: false,
+                 script: [
+                         $class        : 'GroovyScript',
+                         fallbackScript: [classpath: [], sandbox: true, script: "return['Error']"],
+                         script        : [classpath: [], sandbox: false, script: shared_lib.printData('stockartifacts')]
+                 ]
+                ]
+        ])
+])
 
 pipeline {
     agent {
