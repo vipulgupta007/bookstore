@@ -13,7 +13,7 @@ properties([
                  script: [
                          $class        : 'GroovyScript',
                          fallbackScript: [classpath: [], sandbox: true, script: "return['Error']"],
-                         script        : [classpath: [], sandbox: false, script: shared_lib.printData('stockartifacts')]
+                         script        : [classpath: [], sandbox: false, script: commons.printData('stockartifacts')]
                  ]
                 ]
         ])
