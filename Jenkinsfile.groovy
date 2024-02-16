@@ -24,6 +24,10 @@ pipeline {
         label "${AGENT_LABEL}"
     }
 
+    parameters {
+        string(name: 'branchName', defaultValue: 'development', description: 'Enter target branch.')
+    }
+    
     stages {
         stage('Initialise') {
             steps {
