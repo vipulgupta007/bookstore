@@ -19,6 +19,10 @@ properties([
         ])
 ])
 
+environment {
+    DOCKER_CREDENTIALS = credentials['DOCKER_CREDENTIALS']
+}
+
 pipeline {
     agent {
         label "${AGENT_LABEL}"
@@ -37,7 +41,21 @@ pipeline {
             }
         }
 
+        stage('Push to Docker') {
+            steps {
+                script {
+                    pushToDocker()
+                }
+            }
+        }
+
     }     
+}
+
+
+def pushToDocker() {
+    sh "docker login -u $env.DOCKER_CREDENTIALS_USR -p $env.DOCKER_CREDENTIALS_PSW"
+    sh "docker logout"
 }
 
 def checkoutAndBuild() {
