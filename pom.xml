@@ -14,7 +14,7 @@
 	<name>BookStore</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 		<apache-validation>2.0.6</apache-validation>
 	</properties>
 	<dependencies>
