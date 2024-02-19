@@ -29,7 +29,7 @@ pipeline {
     }
 
     parameters {
-        string(name: 'branchName', defaultValue: 'development', description: 'Enter target branch.')
+        string(name: 'branchName', defaultValue: 'main', description: 'Enter target branch.')
     }
     
     stages {
@@ -54,7 +54,7 @@ pipeline {
 
 
 def pushToDocker() {
-    sh "docker login -u $env.DOCKER_CREDENTIALS_USR -p $env.DOCKER_CREDENTIALS_PSW"
+    sh "docker login -u ${DOCKER_CREDENTIALS_USR} -p ${DOCKER_CREDENTIALS_PSW}"
     sh "docker logout"
 }
 
