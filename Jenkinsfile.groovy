@@ -34,6 +34,15 @@ pipeline {
     }
     
     stages {
+
+        stage('Initialise') {
+            steps {
+                script {
+                    initialise()
+                }
+            }
+        }
+
         stage('Checkout & Build') {
             steps {
                 script {
