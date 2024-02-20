@@ -20,7 +20,8 @@ properties([
 ])
 
 environment {
-    DOCKER_CREDENTIALS = credentials['DOCKER_CREDENTIALS']
+    DOCKER_CREDENTIALS_USERNAME = ''
+    DOCKER_CREDENTIALS_PASSWORD = ''
 }
 
 pipeline {
@@ -54,7 +55,7 @@ pipeline {
 
 
 def pushToDocker() {
-    sh "docker login -u ${DOCKER_CREDENTIALS_USR} -p ${DOCKER_CREDENTIALS_PSW}"
+    sh "docker login -u ${env.DOCKER_CREDENTIALS_USERNAME} -p ${env.DOCKER_CREDENTIALS_PASSWORD}"
     sh "docker logout"
 }
 
@@ -69,4 +70,13 @@ def checkoutAndBuild() {
     ])
     sh "mvn clean package"
     echo "Build successfull with option $env.Data"
+}
+
+def initialise(){
+    withCredentials([usernamePassword(credentialsId: 'DOCKER_CREDENTIALS', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+        script {
+            env.DOCKER_CREDENTIALS_USERNAME = "${DOCKER_USERNAME}"
+            env.DOCKER_CREDENTIALS_PASSWORD = "${DOCKER_PASSWORD}"
+        }
+    }
 }
