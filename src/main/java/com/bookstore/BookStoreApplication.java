@@ -14,7 +14,7 @@ public class BookStoreApplication {
 
 	public static void main(String[] args) {
 
-		System.out.println("BookStore application");
+		System.out.println("BookStore application is going to start");
 		SpringApplication.run(BookStoreApplication.class, args);
 	}
 
