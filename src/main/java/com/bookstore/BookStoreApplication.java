@@ -13,6 +13,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class BookStoreApplication {
 
 	public static void main(String[] args) {
+
+		System.out.println("BookStore application");
 		SpringApplication.run(BookStoreApplication.class, args);
 	}
 
