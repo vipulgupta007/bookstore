@@ -31,9 +31,6 @@ pipeline {
 
     parameters {
         string(name: 'branchName', defaultValue: 'main', description: 'Enter target branch.')
-    }
-
-    parameters {
         string(name: 'VersionToBuild', defaultValue: '1.0.0', description: 'Enter target Version.')
     }
     
