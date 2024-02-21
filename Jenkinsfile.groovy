@@ -65,7 +65,7 @@ pipeline {
 
 def pushToDocker() {
     sh "docker login -u ${env.DOCKER_CREDENTIALS_USERNAME} -p ${env.DOCKER_CREDENTIALS_PASSWORD}"
-    sh "docker build . -t vipul753/bookstore:1.0.0"
+    sh "docker build --network=host . -t vipul753/bookstore:1.0.0"
     sh "docker push vipul753/bookstore:1.0.0"
     sh "docker logout"
 }
