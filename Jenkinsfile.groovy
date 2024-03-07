@@ -22,6 +22,7 @@ properties([
 environment {
     DOCKER_CREDENTIALS_USERNAME = ''
     DOCKER_CREDENTIALS_PASSWORD = ''
+    AZURE_REGISTRY = 'projectbookstore.azurecr.io'
 }
 
 pipeline {
@@ -65,7 +66,7 @@ pipeline {
 
 
 def pushToDocker() {
-    sh "docker login -u ${env.DOCKER_CREDENTIALS_USERNAME} -p ${env.DOCKER_CREDENTIALS_PASSWORD}"
+    sh "docker login ${env.AZURE_REGISTRY} -u ${env.DOCKER_CREDENTIALS_USERNAME} -p ${env.DOCKER_CREDENTIALS_PASSWORD}"
     sh "docker build --network=host . -t vipul753/bookstore:1.0.1"
     sh "docker push vipul753/bookstore:$env.VersionToBuild"
     sh "docker logout"
