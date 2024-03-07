@@ -22,6 +22,9 @@ properties([
 environment {
     DOCKER_CREDENTIALS_USERNAME = ''
     DOCKER_CREDENTIALS_PASSWORD = ''
+    AZURE_CREDENTIALS_USERNAME = ''
+    AZURE_CREDENTIALS_PASSWORD = ''
+    AZURE_REGISTRY = 'projectbookstore.azurecr.io'
 }
 
 pipeline {
@@ -65,7 +68,7 @@ pipeline {
 
 
 def pushToDocker() {
-    sh "docker login -u ${env.DOCKER_CREDENTIALS_USERNAME} -p ${env.DOCKER_CREDENTIALS_PASSWORD}"
+    sh "docker login ${env.AZURE_REGISTRY} -u ${env.AZURE_CREDENTIALS_USERNAME} -p ${env.AZURE_CREDENTIALS_PASSWORD}"
     sh "docker build --network=host . -t vipul753/bookstore:1.0.1"
     sh "docker push vipul753/bookstore:$env.VersionToBuild"
     sh "docker logout"
@@ -89,6 +92,13 @@ def initialise(){
         script {
             env.DOCKER_CREDENTIALS_USERNAME = "${DOCKER_USERNAME}"
             env.DOCKER_CREDENTIALS_PASSWORD = "${DOCKER_PASSWORD}"
+        }
+    }
+
+    withCredentials([usernamePassword(credentialsId: 'AZURE_CREDENTIALS', usernameVariable: 'AZURE_USERNAME', passwordVariable: 'AZURE_PASSWORD')]) {
+        script {
+            env.AZURE_CREDENTIALS_USERNAME = "${AZURE_USERNAME}"
+            env.AZURE_CREDENTIALS_PASSWORD = "${AZURE_PASSWORD}"
         }
     }
 }
