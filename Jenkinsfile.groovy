@@ -69,7 +69,7 @@ pipeline {
 
 def pushToDocker() {
     sh "docker login projectbookstore.azurecr.io -u ${env.AZURE_CREDENTIALS_USERNAME} -p ${env.AZURE_CREDENTIALS_PASSWORD}"
-    sh "docker build --network=host . -t projectbookstore.azurecr.io/bookstore:1.0.1"
+    sh "docker build --network=host . -t projectbookstore.azurecr.io/bookstore:$env.VersionToBuild"
     sh "docker push projectbookstore.azurecr.io/bookstore:$env.VersionToBuild"
     sh "docker logout"
 }
