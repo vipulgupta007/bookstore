@@ -4,9 +4,9 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     initialization-mode: always
-    url: jdbc:postgresql://custompostgres:5432/StockServices
-    username: StockServices
-    password: StockServices
+    url: jdbc:postgresql://c-bookstore.64u26ppta3q332.postgres.cosmos.azure.com:5432/bookstore?sslmode=require
+    username: citus
+    password: Vanshu@fb4
     platform: postgres
   jpa:
     hibernate:
