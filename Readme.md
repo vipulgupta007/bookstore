@@ -1,7 +1,7 @@
 # Useful docker commands
 
 ## 1. <code> docker ps </code>
-<span> This command is used to get all the running containers </span>
+<span> This command is used to get all the running containers   </span>
 
 ## 2. <code> docker ps -a </code>
 <span> This command is used to get all the running containers along with ones that have been exited </span>
